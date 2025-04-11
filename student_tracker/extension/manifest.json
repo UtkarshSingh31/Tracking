@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Simple Activity Tracker",
+  "version": "1.0",
+  "description": "A prototype to track user activity and send it to a backend.",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "webNavigation"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' ; object-src 'self'"
+  },
+  "host_permissions": [
+    "<all_urls>",
+    "http://localhost:5000/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
+    }
+  }
+}
